@@ -1,19 +1,19 @@
-#ifndef _GUARD_cvssd_h_
-#define _GUARD_cvssd_h_
+#ifndef _GUARD_cvess_h_
+#define _GUARD_cvess_h_
 
-typedef struct CvSSDPoint
+typedef struct CvESSPoint
 {
 	CvPoint2D32f pt;
-	int size;
+	float scale;
 	float dir;
 } CvSSDPoint;
 
-typedef struct CvSSDParams
+typedef struct CvESSParams
 {
 	int large_patch;
 	int small_patch;
-} CvSSDParams;
+} CvESSParams;
 
-void cvExtractSSD( const CvArr* image, const CvArr* mask, CvSeq** keypoints, CvSeq** descriptors, CvMemStorage* storage, CvSSDParams params );
+void cvExtractESS( const CvArr* image, const CvArr* mask, CvSeq** keypoints, CvSeq** descriptors, CvMemStorage* storage, CvESSParams params );
 
 #endif
